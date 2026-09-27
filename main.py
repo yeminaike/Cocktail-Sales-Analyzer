@@ -32,3 +32,23 @@ print(df.dtypes)
 summary = df[['Prepared', 'Sold']].agg(['mean', 'min', 'max'])
 # print("\nSummary statistics:")
 print(summary)
+
+df['Revenue'] = df['Sold'] * df['Selling Price']
+print("\nRevenue:")
+print(df['Revenue'])
+print(df[['Date', 'Day', 'Prepared', 'Sold', 'Selling Price', 'Cost Per Bottle', 'Revenue']])
+df.to_excel("LimeMint_with_Revenue.xlsx", index=False)
+
+df['Total Cost'] = df['Prepared'] * df['Cost Per Bottle']
+print(df[['Date', 'Day', 'Prepared', 'Sold', 'Selling Price', 'Cost Per Bottle', 'Revenue', 'Total Cost']])
+
+df.to_excel("LimeMint_with_TotalCost.xlsx", index=False)
+
+print("File saved successfully!")
+
+df['Profit'] = df['Revenue'] - df['Total Cost']
+print(df[['Date', 'Day', 'Prepared', 'Sold', 'Selling Price', 'Cost Per Bottle', 'Revenue', 'Total Cost', 'Profit']])
+
+df.to_excel("LimeMint_with_Profit.xlsx", index=False)
+
+
