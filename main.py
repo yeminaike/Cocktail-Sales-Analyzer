@@ -11,5 +11,24 @@ print("the column names in the dataset are:", df.columns.tolist())
 
 print(df.dtypes)
 
-print("\n full info summary:")
-df.info()
+# statistical summary
+# print("\n full info summary:")
+# print(df.describe())
+
+# Or
+
+# avg_number_prepared = df['Prepared'].mean()
+# avg_number_sold = df["Sold"].mean()
+
+# min_number_prepared = df['Prepared'].min()
+# max_number_prepared = df['Prepared'].max()
+
+# print("\nAverage number prepared:", avg_number_prepared)
+# print("Average number sold:", avg_number_sold)
+# print("Minimum number prepared:", min_number_prepared)
+# print("Maximum number prepared:", max_number_prepared)
+
+
+summary = df[['Prepared', 'Sold']].agg(['mean', 'min', 'max'])
+# print("\nSummary statistics:")
+print(summary)

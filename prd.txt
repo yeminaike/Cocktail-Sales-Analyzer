@@ -1,0 +1,24 @@
+LEVEL 1 — Understand the data
+1. Load the Excel file
+
+Import the Excel file into pandas and store it in a DataFrame called df.
+
+2. Show me the first 5 records.
+
+I want to quickly see what kind of data we're working with.
+
+3. Tell me:
+How many rows do we have?
+How many columns?
+What are the column names?
+What data types are in the DataFrame?
+4. Give me a statistical summary of the numerical columns.
+
+Use pandas to investigate things like:
+
+average number prepared
+average number sold
+minimum
+maximum
+etc.
+
