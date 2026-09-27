@@ -22,3 +22,26 @@ minimum
 maximum
 etc.
 
+LEVEL 3 — Business questions
+
+Now I'm becoming more serious as your boss. 😂
+
+9. Which day generated the highest revenue?
+
+I don't want you manually looking at the Excel file.
+
+Use pandas.
+
+
+Which day generated the highest profit?
+
+Again, use Python to find it.
+
+11. Which day had the lowest profit?
+
+12. What was our total revenue for the entire week?
+
+13. What was our total production cost?
+14. What was our total profit?
+15. How many drinks did we sell during the entire week?
+16. How many drinks were left over during the entire week?

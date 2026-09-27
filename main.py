@@ -52,3 +52,41 @@ print(df[['Date', 'Day', 'Prepared', 'Sold', 'Selling Price', 'Cost Per Bottle',
 df.to_excel("LimeMint_with_Profit.xlsx", index=False)
 
 
+df['Left Over'] = df["Prepared"] - df["Sold"]
+print(df[['Date', 'Day', 'Prepared', 'Sold', 'Selling Price', 'Cost Per Bottle', 'Revenue', 'Total Cost', 'Profit', 'Left Over']])
+
+df.to_excel("LimeMint_with_LeftOver.xlsx", index=False)
+
+highest_revenue_row = df.loc[df['Revenue'].idxmax()]
+
+print("\nHighest revenue day:")
+print(highest_revenue_row[['Date', 'Day', 'Revenue']])
+
+highest_profit_row = df.loc[df['Profit'].idxmax()]
+print("\nHighest profit day:")
+print(highest_profit_row[['Day', 'Profit']])
+
+
+lowest_profit_row = df.loc[df['Profit'].idxmin()]
+print("\nLowest profit day:")
+print(lowest_profit_row[['Day', 'Profit']])
+
+total_revenue = df['Revenue'].sum()
+print("\nTotal revenue:")
+print(total_revenue)
+
+total_production_cost = df['Total Cost'].sum()
+print("\nTotal production cost:")
+print(total_production_cost)
+
+total_profit = df['Profit'].sum()
+print("\n total profit")
+print(total_profit)
+
+total_sales = df['Sold'].sum()
+print("\nTotal sales:")
+print(total_sales)
+
+total_leftover = df['Left Over'].sum()
+print("\nTotal leftover:")
+print(total_leftover)
