@@ -45,3 +45,31 @@ Again, use Python to find it.
 14. What was our total profit?
 15. How many drinks did we sell during the entire week?
 16. How many drinks were left over during the entire week?
+
+🔵 LEVEL 4 — Customer demand & inventory
+
+Now here's where I want you to think like a data analyst, not just a Python programmer.
+
+17. Which day had the highest number of drinks sold?
+
+18. Which day had the most leftover drinks?
+19. Which day had the highest sales rate?
+
+Create a new column:
+
+Sales Rate
+
+Think:
+
+Sold / Prepared × 100
+
+For example, if:
+
+Prepared = 20
+Sold = 15
+
+then:
+
+Sales Rate = 75%
+20. Which day had the lowest sales rate?
+21. Did we sell everything we prepared on any day?

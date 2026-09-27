@@ -90,3 +90,33 @@ print(total_sales)
 total_leftover = df['Left Over'].sum()
 print("\nTotal leftover:")
 print(total_leftover)
+
+highest_number_sold = df.loc[[df['Sold'].idxmax()]]
+print("\nHighest number sold:")
+print(highest_number_sold[['Day', 'Sold']])
+
+most_leftover_drinks_row = df.loc[[df['Left Over'].idxmax()]]
+print("\nMost leftover drinks:")
+print(most_leftover_drinks_row[['Day', 'Left Over']])
+# Create Sales Rate (keep it as a number)
+df['Sales Rate'] = (df['Sold'] / df['Prepared']) * 100
+
+
+print(df[['Date', 'Day', 'Prepared', 'Sold', 'Selling Price', 'Cost Per Bottle', 
+          'Revenue', 'Total Cost', 'Profit', 'Left Over', 'Sales Rate']].to_string(
+    formatters={'Sales Rate': '{:.1f}%'.format}
+))
+
+df.to_excel("LimeMint_with_SalesRate.xlsx", index=False)
+
+highest_sales_rate_row = df.loc[df['Sales Rate'].idxmax()]
+
+print("\nHighest sales rate day:")
+print(f"Day: {highest_sales_rate_row['Day']}")
+print(f"Sales Rate: {highest_sales_rate_row['Sales Rate']:.1f}%")
+
+
+lowest_sales_rate_row = df.loc[df['Sales Rate'].idxmin()]
+print("\nLowest sales rate day:")
+print(f"Day: {lowest_sales_rate_row['Day']}")
+print(f"Sales Rate: {lowest_sales_rate_row['Sales Rate']:.1f}%")
