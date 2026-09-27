@@ -120,3 +120,22 @@ lowest_sales_rate_row = df.loc[df['Sales Rate'].idxmin()]
 print("\nLowest sales rate day:")
 print(f"Day: {lowest_sales_rate_row['Day']}")
 print(f"Sales Rate: {lowest_sales_rate_row['Sales Rate']:.1f}%")
+
+
+profit_greater_than_3000 = df['Profit'] > 3000
+print("\nDays with profit greater than 3000:")
+print(df[profit_greater_than_3000][['Day', 'Profit']])
+
+profit_descending_to_ascending_order = df.sort_values(by='Profit', ascending=False)
+print("\nDays sorted by profit (descending order):")
+print(profit_descending_to_ascending_order[['Day', 'Profit']].to_string(index=False))
+
+
+sales_descending_to_ascending_order = df.sort_values(by='Sold', ascending=False)
+print("\nDays sorted by sales (descending order):")
+print(sales_descending_to_ascending_order[['Day', 'Sold']].to_string(index=False))
+
+
+top_3_days_by_profit = df.nlargest(3, 'Profit')[['Day', 'Profit']]
+print("\n top 3 profitable days")
+print(top_3_days_by_profit.to_string(index=False) )

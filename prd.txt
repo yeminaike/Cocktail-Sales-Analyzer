@@ -73,3 +73,12 @@ then:
 Sales Rate = 75%
 20. Which day had the lowest sales rate?
 21. Did we sell everything we prepared on any day?
+
+
+26. Find all days where profit was greater than ₦3,000.
+
+
+LEVEL 6 — Sorting
+27. Sort the DataFrame from highest profit to lowest profit.
+28. Sort it from highest sales to lowest sales.
+29. Show me the top 3 most profitable days.
